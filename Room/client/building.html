@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Building Energy Efficiency Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="building.css">
+</head>
+<body>
+    <nav class="navbar">
+		<img class="logo" src="logo2.jpg">
+		<ul>
+			<li><a  href="main.html">Home</a></li>
+			<li><a class="active" href="about.html">Room</a></li>
+			<li><a href="building.html">Building</a></li>
+	
+		</ul>
+	</nav>
+<div class="img"></div>
+<form class="form">
+    <p class="yearP"><h2>Year</h2></p>
+    <input class="floor_area"  type="text" id="uifloorarea" class="floatLabel" name="RelativeCompactness" value="0.8">
+    
+	<h2>Floor Area</h2>
+    <input class="floor_area"  type="text" id="uifloorarea" class="floatLabel" name="RelativeCompactness" value="0.8">
+    
+    <h2>Elevation </h2>
+    <input class="elevation"  type="text" id="uielevation" class="floatLabel" name="WallArea" value="300">
+    
+    <h2>Average Temperature </h2>
+    <input class="avgtemp"  type="text" id="uiavgtemp" class="floatLabel" name="RoofArea" value="150">
+    
+    
+</form>
+
+<form class="form">
+	
+	
+    <h2>Cooling Degree Days</h2>
+    <input class="coolingdegreedays"  type="text" id="uicoolingdegreedays" class="floatLabel" name="GlazingArea" value="0.25">
+    
+    <h2>Heating Degree Days</h2>
+    <input class="heatingdegreedays"  type="text" id="uiheatingdegreedays" class="floatLabel" name="GlazingArea" value="0.25">
+    
+    <h2>Facility Type</h2>
+	<div>
+    <select class="facility_type" name="" id="uifacilitytype">
+    <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+		<option>Electronic City</option>
+        <option>Rajaji Nagar</option>
+    </select>
+    </div>
+    
+	<button class="submit" onclick="onClickedEstimateSiteEUI()" type="button">Estimate Heating Load</button>
+	<div id="uiEstimatedSiteEUI" class="result">	<h2></h2> </div>
+
+</form></body>
+</html>
