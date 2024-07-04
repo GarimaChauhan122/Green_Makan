@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Energy Efficiency Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	
+	<nav class="navbar">
+		<img class="logo" src="logo2.jpg">
+		<ul>
+			<li><a  href="main.html">Home</a></li>
+			<li><a class="active" href="about.html">Room</a></li>
+			<li><a href="building.html">Building</a></li>
+	
+		</ul>
+	</nav>
+<div class="img"></div>
+<form class="form" action="/predict_heating_load">
+	<p class = "rcPara"><h2>Relative Compactness</h2></p>
+    <input class="relativecompactness"  type="text" id="uiRelComp" class="floatLabel" name="uiRelComp" value="0.8">
+    
+    <h2>Wall Area </h2>
+    <input class="wallarea"  type="text" id="uiWallArea" class="floatLabel" name="uiWallArea" value="300">
+    
+    <h2>Roof Area </h2>
+    <input class="roofarea"  type="text" id="uiRoofArea" class="floatLabel" name="uiRoofArea" value="150">
+    
+    <h2>Overall Height</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-overallheight-1" name="uiheight" value="3.5"/>
+		<label for="radio-overallheight-1">3.5</label>
+		<input type="radio" id="radio-overallheight-2" name="uiheight" value="7" checked/>
+		<label for="radio-overallheight-2">7</label>		
+	</div>
+</form>
+
+<form class="form">
+	<h2>Orientation</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-orient-1" name="uiOrient" value="2"/>
+		<label for="radio-orient-1">2</label>
+		<input type="radio" id="radio-orient-2" name="uiOrient" value="3" checked/>
+		<label for="radio-orient-2">3</label>
+		<input type="radio" id="radio-orient-3" name="uiOrient" value="4"/>
+		<label for="radio-orient-3">4</label>
+		<input type="radio" id="radio-orient-4" name="uiOrient" value="5"/>
+		<label for="radio-orient-4">5</label>		
+	</div>
+	
+    <h2>Glazing Area </h2>
+    <input class="glazingarea"  type="text" id="uiGlazingArea" class="floatLabel" name="GlazingArea" value="0.25">
+    
+    <h2>Glazing Area Distribution</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-glazingarea-1" name="uiGlazingAreaDist" value="0"/>
+		<label for="radio-glazingarea-1">0</label>
+		<input type="radio" id="radio-glazingarea-2" name="uiGlazingAreaDist" value="1"/>
+		<label for="radio-glazingarea-2">1</label>
+        <input type="radio" id="radio-glazingarea-3" name="uiGlazingAreaDist" value="2"/>
+		<label for="radio-glazingarea-3">2</label>
+        <input type="radio" id="radio-glazingarea-4" name="uiGlazingAreaDist" value="3"/>
+		<label for="radio-glazingarea-4">3</label>
+        <input type="radio" id="radio-glazingarea-5" name="uiGlazingAreaDist" value="4"/>
+		<label for="radio-glazingarea-5">4</label>
+        <input type="radio" id="radio-glazingarea-6" name="uiGlazingAreaDist" value="5"/>
+		<label for="radio-glazingarea-6">5</label>
+		
+	</div>
+    
+    
+    
+	<button class="submitheating" onclick="onClickedEstimateHeatingLoad()" type="button">Estimate Heating Load</button>
+	<div id="uiEstimatedHeatingLoad" class="result">	<h2></h2> </div>
+
+    <button class="submitcooling" onclick="onClickedEstimateCoolingLoad()" type="button">Estimate Cooling Load</button>
+	<div id="uiEstimatedCoolingLoad" class="result">	<h2></h2> </div>
+
+</form>
+
+</body>
+</html>
